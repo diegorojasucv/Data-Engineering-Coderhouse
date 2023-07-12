@@ -1,0 +1,19 @@
+[2023-07-12T03:30:18.015+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_movies.clean_process_date scheduled__2023-07-11T00:00:00+00:00 [queued]>
+[2023-07-12T03:30:18.021+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_movies.clean_process_date scheduled__2023-07-11T00:00:00+00:00 [queued]>
+[2023-07-12T03:30:18.021+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-12T03:30:18.031+0000] {taskinstance.py:1327} INFO - Executing <Task(SQLExecuteQueryOperator): clean_process_date> on 2023-07-11 00:00:00+00:00
+[2023-07-12T03:30:18.034+0000] {standard_task_runner.py:57} INFO - Started process 1725 to run task
+[2023-07-12T03:30:18.038+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_movies', 'clean_process_date', 'scheduled__2023-07-11T00:00:00+00:00', '--job-id', '60', '--raw', '--subdir', 'DAGS_FOLDER/etl_movies.py', '--cfg-path', '/tmp/tmp88_8maup']
+[2023-07-12T03:30:18.040+0000] {standard_task_runner.py:85} INFO - Job 60: Subtask clean_process_date
+[2023-07-12T03:30:18.122+0000] {task_command.py:410} INFO - Running <TaskInstance: etl_movies.clean_process_date scheduled__2023-07-11T00:00:00+00:00 [running]> on host 1f454e8d5326
+[2023-07-12T03:30:18.253+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Diego Rojas' AIRFLOW_CTX_DAG_ID='etl_movies' AIRFLOW_CTX_TASK_ID='clean_process_date' AIRFLOW_CTX_EXECUTION_DATE='2023-07-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-07-11T00:00:00+00:00'
+[2023-07-12T03:30:18.254+0000] {sql.py:265} INFO - Executing: 
+DELETE FROM top_movies_imdb WHERE process_date = '2023-07-12';
+[2023-07-12T03:30:18.266+0000] {base.py:73} INFO - Using connection ID 'redshift_default' for task execution.
+[2023-07-12T03:30:18.587+0000] {base.py:73} INFO - Using connection ID 'redshift_default' for task execution.
+[2023-07-12T03:30:19.954+0000] {sql.py:375} INFO - Running statement: 
+DELETE FROM top_movies_imdb WHERE process_date = '2023-07-12';, parameters: None
+[2023-07-12T03:30:20.881+0000] {sql.py:384} INFO - Rows affected: 0
+[2023-07-12T03:30:21.382+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=etl_movies, task_id=clean_process_date, execution_date=20230711T000000, start_date=20230712T033018, end_date=20230712T033021
+[2023-07-12T03:30:21.436+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-12T03:30:21.494+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

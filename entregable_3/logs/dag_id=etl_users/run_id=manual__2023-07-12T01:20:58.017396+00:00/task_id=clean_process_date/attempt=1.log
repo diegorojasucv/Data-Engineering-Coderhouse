@@ -1,0 +1,19 @@
+[2023-07-12T01:21:07.880+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_users.clean_process_date manual__2023-07-12T01:20:58.017396+00:00 [queued]>
+[2023-07-12T01:21:07.905+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_users.clean_process_date manual__2023-07-12T01:20:58.017396+00:00 [queued]>
+[2023-07-12T01:21:07.909+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-12T01:21:07.947+0000] {taskinstance.py:1327} INFO - Executing <Task(SQLExecuteQueryOperator): clean_process_date> on 2023-07-12 01:20:58.017396+00:00
+[2023-07-12T01:21:07.996+0000] {standard_task_runner.py:57} INFO - Started process 196 to run task
+[2023-07-12T01:21:08.006+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_users', 'clean_process_date', 'manual__2023-07-12T01:20:58.017396+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/etl_users.py', '--cfg-path', '/tmp/tmpch93ny9c']
+[2023-07-12T01:21:08.016+0000] {standard_task_runner.py:85} INFO - Job 51: Subtask clean_process_date
+[2023-07-12T01:21:08.146+0000] {task_command.py:410} INFO - Running <TaskInstance: etl_users.clean_process_date manual__2023-07-12T01:20:58.017396+00:00 [running]> on host 098d845109cd
+[2023-07-12T01:21:08.550+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Lucas Trubiano' AIRFLOW_CTX_DAG_ID='etl_users' AIRFLOW_CTX_TASK_ID='clean_process_date' AIRFLOW_CTX_EXECUTION_DATE='2023-07-12T01:20:58.017396+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-12T01:20:58.017396+00:00'
+[2023-07-12T01:21:08.554+0000] {sql.py:265} INFO - Executing: 
+DELETE FROM users WHERE process_date = '2023-07-12';
+[2023-07-12T01:21:08.613+0000] {base.py:73} INFO - Using connection ID 'redshift_default' for task execution.
+[2023-07-12T01:21:09.147+0000] {base.py:73} INFO - Using connection ID 'redshift_default' for task execution.
+[2023-07-12T01:21:10.490+0000] {sql.py:375} INFO - Running statement: 
+DELETE FROM users WHERE process_date = '2023-07-12';, parameters: None
+[2023-07-12T01:21:11.299+0000] {sql.py:384} INFO - Rows affected: 0
+[2023-07-12T01:21:11.783+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=etl_users, task_id=clean_process_date, execution_date=20230712T012058, start_date=20230712T012107, end_date=20230712T012111
+[2023-07-12T01:21:11.859+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-12T01:21:11.940+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

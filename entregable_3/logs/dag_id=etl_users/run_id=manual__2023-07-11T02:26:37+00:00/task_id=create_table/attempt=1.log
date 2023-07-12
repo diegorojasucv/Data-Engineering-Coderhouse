@@ -1,0 +1,36 @@
+[2023-07-11T02:26:46.556+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_users.create_table manual__2023-07-11T02:26:37+00:00 [queued]>
+[2023-07-11T02:26:46.564+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_users.create_table manual__2023-07-11T02:26:37+00:00 [queued]>
+[2023-07-11T02:26:46.564+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-11T02:26:46.575+0000] {taskinstance.py:1327} INFO - Executing <Task(SQLExecuteQueryOperator): create_table> on 2023-07-11 02:26:37+00:00
+[2023-07-11T02:26:46.580+0000] {standard_task_runner.py:57} INFO - Started process 2386 to run task
+[2023-07-11T02:26:46.584+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_users', 'create_table', 'manual__2023-07-11T02:26:37+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/etl_users.py', '--cfg-path', '/tmp/tmpqz846ec5']
+[2023-07-11T02:26:46.586+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask create_table
+[2023-07-11T02:26:46.659+0000] {task_command.py:410} INFO - Running <TaskInstance: etl_users.create_table manual__2023-07-11T02:26:37+00:00 [running]> on host 5f08e8e1aa21
+[2023-07-11T02:26:46.760+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Lucas Trubiano' AIRFLOW_CTX_DAG_ID='etl_users' AIRFLOW_CTX_TASK_ID='create_table' AIRFLOW_CTX_EXECUTION_DATE='2023-07-11T02:26:37+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-11T02:26:37+00:00'
+[2023-07-11T02:26:46.761+0000] {sql.py:265} INFO - Executing: 
+CREATE TABLE IF NOT EXISTS users (
+    name VARCHAR(70),
+    gender VARCHAR(1),
+    age INT,
+    is_under_20 BOOLEAN,
+    is_over_40 BOOLEAN,
+    email VARCHAR(50),
+    nationality VARCHAR(5),
+    process_date VARCHAR(10) distkey
+) SORTKEY(process_date, nationality);
+[2023-07-11T02:26:46.774+0000] {base.py:73} INFO - Using connection ID 'redshift_default' for task execution.
+[2023-07-11T02:26:46.929+0000] {base.py:73} INFO - Using connection ID 'redshift_default' for task execution.
+[2023-07-11T02:26:48.412+0000] {sql.py:375} INFO - Running statement: 
+CREATE TABLE IF NOT EXISTS users (
+    name VARCHAR(70),
+    gender VARCHAR(1),
+    age INT,
+    is_under_20 BOOLEAN,
+    is_over_40 BOOLEAN,
+    email VARCHAR(50),
+    nationality VARCHAR(5),
+    process_date VARCHAR(10) distkey
+) SORTKEY(process_date, nationality);, parameters: None
+[2023-07-11T02:26:49.896+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=etl_users, task_id=create_table, execution_date=20230711T022637, start_date=20230711T022646, end_date=20230711T022649
+[2023-07-11T02:26:49.983+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-11T02:26:50.060+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

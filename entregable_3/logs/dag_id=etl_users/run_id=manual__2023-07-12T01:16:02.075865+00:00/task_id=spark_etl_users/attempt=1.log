@@ -1,0 +1,303 @@
+[2023-07-12T01:16:15.488+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_users.spark_etl_users manual__2023-07-12T01:16:02.075865+00:00 [queued]>
+[2023-07-12T01:16:15.495+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_users.spark_etl_users manual__2023-07-12T01:16:02.075865+00:00 [queued]>
+[2023-07-12T01:16:15.496+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-12T01:16:15.507+0000] {taskinstance.py:1327} INFO - Executing <Task(SparkSubmitOperator): spark_etl_users> on 2023-07-12 01:16:02.075865+00:00
+[2023-07-12T01:16:15.511+0000] {standard_task_runner.py:57} INFO - Started process 223 to run task
+[2023-07-12T01:16:15.514+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_users', 'spark_etl_users', 'manual__2023-07-12T01:16:02.075865+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/etl_users.py', '--cfg-path', '/tmp/tmpksmslwlo']
+[2023-07-12T01:16:15.516+0000] {standard_task_runner.py:85} INFO - Job 47: Subtask spark_etl_users
+[2023-07-12T01:16:15.574+0000] {task_command.py:410} INFO - Running <TaskInstance: etl_users.spark_etl_users manual__2023-07-12T01:16:02.075865+00:00 [running]> on host e2cfd1b0f54a
+[2023-07-12T01:16:15.696+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Lucas Trubiano' AIRFLOW_CTX_DAG_ID='etl_users' AIRFLOW_CTX_TASK_ID='spark_etl_users' AIRFLOW_CTX_EXECUTION_DATE='2023-07-12T01:16:02.075865+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-12T01:16:02.075865+00:00'
+[2023-07-12T01:16:15.710+0000] {base.py:73} INFO - Using connection ID 'spark_default' for task execution.
+[2023-07-12T01:16:15.711+0000] {spark_submit.py:339} INFO - Spark-Submit cmd: spark-submit --master spark://spark:7077 --driver-class-path /tmp/drivers/postgresql-42.5.2.jar --name arrow-spark /opt/***/scripts/ETL_Users.py
+[2023-07-12T01:16:15.823+0000] {spark_submit.py:490} INFO - /home/***/.local/lib/python3.7/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2023-07-12T01:16:18.501+0000] {spark_submit.py:490} INFO - Corriendo script
+[2023-07-12T01:16:18.505+0000] {spark_submit.py:490} INFO - >>> [init] Inicializando ETL...
+[2023-07-12T01:16:18.570+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO SparkContext: Running Spark version 3.4.1
+[2023-07-12T01:16:18.621+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2023-07-12T01:16:18.691+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO ResourceUtils: ==============================================================
+[2023-07-12T01:16:18.691+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2023-07-12T01:16:18.692+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO ResourceUtils: ==============================================================
+[2023-07-12T01:16:18.692+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO SparkContext: Submitted application: ETL Spark
+[2023-07-12T01:16:18.715+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2023-07-12T01:16:18.724+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO ResourceProfile: Limiting resource is cpu
+[2023-07-12T01:16:18.725+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2023-07-12T01:16:18.763+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO SecurityManager: Changing view acls to: ***
+[2023-07-12T01:16:18.763+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO SecurityManager: Changing modify acls to: ***
+[2023-07-12T01:16:18.764+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO SecurityManager: Changing view acls groups to:
+[2023-07-12T01:16:18.765+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO SecurityManager: Changing modify acls groups to:
+[2023-07-12T01:16:18.765+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2023-07-12T01:16:18.982+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:18 INFO Utils: Successfully started service 'sparkDriver' on port 45591.
+[2023-07-12T01:16:19.012+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO SparkEnv: Registering MapOutputTracker
+[2023-07-12T01:16:19.038+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO SparkEnv: Registering BlockManagerMaster
+[2023-07-12T01:16:19.053+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2023-07-12T01:16:19.054+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2023-07-12T01:16:19.056+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2023-07-12T01:16:19.078+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-a78ca77c-030a-43a1-88f7-cd5b164836a0
+[2023-07-12T01:16:19.090+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2023-07-12T01:16:19.100+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO SparkEnv: Registering OutputCommitCoordinator
+[2023-07-12T01:16:19.209+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2023-07-12T01:16:19.247+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2023-07-12T01:16:19.268+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO SparkContext: Added JAR /tmp/drivers/postgresql-42.5.2.jar at spark://e2cfd1b0f54a:45591/jars/postgresql-42.5.2.jar with timestamp 1689124578560
+[2023-07-12T01:16:19.309+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO Executor: Starting executor ID driver on host e2cfd1b0f54a
+[2023-07-12T01:16:19.313+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): 'file:/tmp/drivers/postgresql-42.5.2.jar,file:/opt/***/postgresql-42.5.2.jar'
+[2023-07-12T01:16:19.325+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45565.
+[2023-07-12T01:16:19.326+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO NettyBlockTransferService: Server created on e2cfd1b0f54a:45565
+[2023-07-12T01:16:19.327+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2023-07-12T01:16:19.332+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, e2cfd1b0f54a, 45565, None)
+[2023-07-12T01:16:19.334+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO BlockManagerMasterEndpoint: Registering block manager e2cfd1b0f54a:45565 with 434.4 MiB RAM, BlockManagerId(driver, e2cfd1b0f54a, 45565, None)
+[2023-07-12T01:16:19.336+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, e2cfd1b0f54a, 45565, None)
+[2023-07-12T01:16:19.337+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:19 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, e2cfd1b0f54a, 45565, None)
+[2023-07-12T01:16:19.518+0000] {spark_submit.py:490} INFO - /home/***/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py:317: FutureWarning: Python 3.7 support is deprecated in Spark 3.4.
+[2023-07-12T01:16:19.520+0000] {spark_submit.py:490} INFO - warnings.warn("Python 3.7 support is deprecated in Spark 3.4.", FutureWarning)
+[2023-07-12T01:16:19.627+0000] {spark_submit.py:490} INFO - >>> [init] Conectando a Redshift...
+[2023-07-12T01:16:21.657+0000] {spark_submit.py:490} INFO - >>> [init] No se pudo conectar a Redshift
+[2023-07-12T01:16:21.664+0000] {spark_submit.py:490} INFO - >>> [execute] Ejecutando ETL...
+[2023-07-12T01:16:21.666+0000] {spark_submit.py:490} INFO - >>> [E] Extrayendo datos de la API...
+[2023-07-12T01:16:22.360+0000] {spark_submit.py:490} INFO - [{'gender': 'female', 'name': {'title': 'Ms', 'first': 'Mirja', 'last': 'Ebert'}, 'location': {'street': {'number': 2727, 'name': 'Marktplatz'}, 'city': 'Bad Salzdetfurth', 'state': 'Brandenburg', 'country': 'Germany', 'postcode': 85308, 'coordinates': {'latitude': '-52.3562', 'longitude': '133.9256'}, 'timezone': {'offset': '+8:00', 'description': 'Beijing, Perth, Singapore, Hong Kong'}}, 'email': 'mirja.ebert@example.com', 'login': {'uuid': 'b2fd4a13-d079-41ff-92f2-6445b99586e7', 'username': 'blackgorilla360', 'password': 'vikings', 'salt': 'dCKf07Yj', 'md5': 'fda32e47150e3e39e777937c30c74dd3', 'sha1': 'b68b164794ceafeebb51286932461bc6766c2627', 'sha256': '1575c060221cb69b85643d80132a6a19564cb750b5db64b151122ae56b35176e'}, 'dob': {'date': '1961-12-11T03:07:13.495Z', 'age': 61}, 'registered': {'date': '2008-10-18T01:05:14.379Z', 'age': 14}, 'phone': '0663-5494494', 'cell': '0176-6409181', 'id': {'name': 'SVNR', 'value': '53 101261 E 590'}, 'picture': {'large': 'https://randomuser.me/api/portraits/women/68.jpg', 'medium': 'https://randomuser.me/api/portraits/med/women/68.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/women/68.jpg'}, 'nat': 'DE'}, {'gender': 'female', 'name': {'title': 'Ms', 'first': 'Venera', 'last': 'Nalivayko'}, 'location': {'street': {'number': 9093, 'name': 'Pasichna'}, 'city': 'Beregove', 'state': 'Hersonska', 'country': 'Ukraine', 'postcode': 32486, 'coordinates': {'latitude': '-4.0297', 'longitude': '170.7937'}, 'timezone': {'offset': '+4:00', 'description': 'Abu Dhabi, Muscat, Baku, Tbilisi'}}, 'email': 'venera.nalivayko@example.com', 'login': {'uuid': '6a970f2e-2830-4ee2-9eae-a0d303991a64', 'username': 'organicdog396', 'password': 'griffin', 'salt': 'amMLfMyp', 'md5': '2878e2d20c009f69790557829bc0a13c', 'sha1': 'e9a9c2d4c7a33f0fe0f0137574cd8808c468a382', 'sha256': '388a5ae6988abb247611a3985458d47399f11e533a2c1680ed8dd872544a8cec'}, 'dob': {'date': '1967-04-18T05:32:11.419Z', 'age': 56}, 'registered': {'date': '2008-09-26T20:03:19.940Z', 'age': 14}, 'phone': '(096) M52-4495', 'cell': '(066) W41-0662', 'id': {'name': '', 'value': None}, 'picture': {'large': 'https://randomuser.me/api/portraits/women/37.jpg', 'medium': 'https://randomuser.me/api/portraits/med/women/37.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/women/37.jpg'}, 'nat': 'UA'}]
+[2023-07-12T01:16:22.447+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:22 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2023-07-12T01:16:22.455+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:22 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2023-07-12T01:16:25.244+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO CodeGenerator: Code generated in 157.868875 ms
+[2023-07-12T01:16:25.332+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO SparkContext: Starting job: json at NativeMethodAccessorImpl.java:0
+[2023-07-12T01:16:25.343+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO DAGScheduler: Got job 0 (json at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2023-07-12T01:16:25.345+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO DAGScheduler: Final stage: ResultStage 0 (json at NativeMethodAccessorImpl.java:0)
+[2023-07-12T01:16:25.346+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO DAGScheduler: Parents of final stage: List()
+[2023-07-12T01:16:25.347+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO DAGScheduler: Missing parents: List()
+[2023-07-12T01:16:25.348+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[6] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2023-07-12T01:16:25.495+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 20.0 KiB, free 434.4 MiB)
+[2023-07-12T01:16:25.531+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 9.7 KiB, free 434.4 MiB)
+[2023-07-12T01:16:25.534+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on e2cfd1b0f54a:45565 (size: 9.7 KiB, free: 434.4 MiB)
+[2023-07-12T01:16:25.537+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1535
+[2023-07-12T01:16:25.546+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[6] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2023-07-12T01:16:25.547+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2023-07-12T01:16:25.585+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (e2cfd1b0f54a, executor driver, partition 0, PROCESS_LOCAL, 9265 bytes)
+[2023-07-12T01:16:25.597+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:25 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+[2023-07-12T01:16:26.553+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:26 INFO PythonRunner: Times: total = 816, boot = 805, init = 10, finish = 1
+[2023-07-12T01:16:26.589+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:26 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 3891 bytes result sent to driver
+[2023-07-12T01:16:26.599+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:26 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1022 ms on e2cfd1b0f54a (executor driver) (1/1)
+[2023-07-12T01:16:26.600+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:26 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2023-07-12T01:16:26.603+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:26 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 54861
+[2023-07-12T01:16:26.608+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:26 INFO DAGScheduler: ResultStage 0 (json at NativeMethodAccessorImpl.java:0) finished in 1.250 s
+[2023-07-12T01:16:26.610+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:26 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2023-07-12T01:16:26.611+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:26 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2023-07-12T01:16:26.613+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:26 INFO DAGScheduler: Job 0 finished: json at NativeMethodAccessorImpl.java:0, took 1.279649 s
+[2023-07-12T01:16:26.894+0000] {spark_submit.py:490} INFO - root
+[2023-07-12T01:16:26.896+0000] {spark_submit.py:490} INFO - |-- _corrupt_record: string (nullable = true)
+[2023-07-12T01:16:26.897+0000] {spark_submit.py:490} INFO - |-- cell: string (nullable = true)
+[2023-07-12T01:16:26.898+0000] {spark_submit.py:490} INFO - |-- dob: struct (nullable = true)
+[2023-07-12T01:16:26.898+0000] {spark_submit.py:490} INFO - |    |-- age: long (nullable = true)
+[2023-07-12T01:16:26.899+0000] {spark_submit.py:490} INFO - |    |-- date: string (nullable = true)
+[2023-07-12T01:16:26.900+0000] {spark_submit.py:490} INFO - |-- email: string (nullable = true)
+[2023-07-12T01:16:26.903+0000] {spark_submit.py:490} INFO - |-- gender: string (nullable = true)
+[2023-07-12T01:16:26.906+0000] {spark_submit.py:490} INFO - |-- id: struct (nullable = true)
+[2023-07-12T01:16:26.907+0000] {spark_submit.py:490} INFO - |    |-- name: string (nullable = true)
+[2023-07-12T01:16:26.908+0000] {spark_submit.py:490} INFO - |    |-- value: string (nullable = true)
+[2023-07-12T01:16:26.909+0000] {spark_submit.py:490} INFO - |-- location: struct (nullable = true)
+[2023-07-12T01:16:26.910+0000] {spark_submit.py:490} INFO - |    |-- city: string (nullable = true)
+[2023-07-12T01:16:26.911+0000] {spark_submit.py:490} INFO - |    |-- coordinates: struct (nullable = true)
+[2023-07-12T01:16:26.912+0000] {spark_submit.py:490} INFO - |    |    |-- latitude: string (nullable = true)
+[2023-07-12T01:16:26.913+0000] {spark_submit.py:490} INFO - |    |    |-- longitude: string (nullable = true)
+[2023-07-12T01:16:26.913+0000] {spark_submit.py:490} INFO - |    |-- country: string (nullable = true)
+[2023-07-12T01:16:26.914+0000] {spark_submit.py:490} INFO - |    |-- postcode: long (nullable = true)
+[2023-07-12T01:16:26.915+0000] {spark_submit.py:490} INFO - |    |-- state: string (nullable = true)
+[2023-07-12T01:16:26.916+0000] {spark_submit.py:490} INFO - |    |-- street: struct (nullable = true)
+[2023-07-12T01:16:26.918+0000] {spark_submit.py:490} INFO - |    |    |-- name: string (nullable = true)
+[2023-07-12T01:16:26.921+0000] {spark_submit.py:490} INFO - |    |    |-- number: long (nullable = true)
+[2023-07-12T01:16:26.925+0000] {spark_submit.py:490} INFO - |    |-- timezone: struct (nullable = true)
+[2023-07-12T01:16:26.926+0000] {spark_submit.py:490} INFO - |    |    |-- description: string (nullable = true)
+[2023-07-12T01:16:26.932+0000] {spark_submit.py:490} INFO - |    |    |-- offset: string (nullable = true)
+[2023-07-12T01:16:26.934+0000] {spark_submit.py:490} INFO - |-- login: struct (nullable = true)
+[2023-07-12T01:16:26.937+0000] {spark_submit.py:490} INFO - |    |-- md5: string (nullable = true)
+[2023-07-12T01:16:26.939+0000] {spark_submit.py:490} INFO - |    |-- password: string (nullable = true)
+[2023-07-12T01:16:26.941+0000] {spark_submit.py:490} INFO - |    |-- salt: string (nullable = true)
+[2023-07-12T01:16:26.942+0000] {spark_submit.py:490} INFO - |    |-- sha1: string (nullable = true)
+[2023-07-12T01:16:26.944+0000] {spark_submit.py:490} INFO - |    |-- sha256: string (nullable = true)
+[2023-07-12T01:16:26.945+0000] {spark_submit.py:490} INFO - |    |-- username: string (nullable = true)
+[2023-07-12T01:16:26.947+0000] {spark_submit.py:490} INFO - |    |-- uuid: string (nullable = true)
+[2023-07-12T01:16:26.949+0000] {spark_submit.py:490} INFO - |-- name: struct (nullable = true)
+[2023-07-12T01:16:26.951+0000] {spark_submit.py:490} INFO - |    |-- first: string (nullable = true)
+[2023-07-12T01:16:26.952+0000] {spark_submit.py:490} INFO - |    |-- last: string (nullable = true)
+[2023-07-12T01:16:26.954+0000] {spark_submit.py:490} INFO - |    |-- title: string (nullable = true)
+[2023-07-12T01:16:26.955+0000] {spark_submit.py:490} INFO - |-- nat: string (nullable = true)
+[2023-07-12T01:16:26.956+0000] {spark_submit.py:490} INFO - |-- phone: string (nullable = true)
+[2023-07-12T01:16:26.957+0000] {spark_submit.py:490} INFO - |-- picture: struct (nullable = true)
+[2023-07-12T01:16:26.958+0000] {spark_submit.py:490} INFO - |    |-- large: string (nullable = true)
+[2023-07-12T01:16:26.958+0000] {spark_submit.py:490} INFO - |    |-- medium: string (nullable = true)
+[2023-07-12T01:16:26.959+0000] {spark_submit.py:490} INFO - |    |-- thumbnail: string (nullable = true)
+[2023-07-12T01:16:26.959+0000] {spark_submit.py:490} INFO - |-- registered: struct (nullable = true)
+[2023-07-12T01:16:26.960+0000] {spark_submit.py:490} INFO - |    |-- age: long (nullable = true)
+[2023-07-12T01:16:26.961+0000] {spark_submit.py:490} INFO - |    |-- date: string (nullable = true)
+[2023-07-12T01:16:26.961+0000] {spark_submit.py:490} INFO - 
+[2023-07-12T01:16:27.081+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO BlockManagerInfo: Removed broadcast_0_piece0 on e2cfd1b0f54a:45565 in memory (size: 9.7 KiB, free: 434.4 MiB)
+[2023-07-12T01:16:27.376+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO CodeGenerator: Code generated in 140.567208 ms
+[2023-07-12T01:16:27.391+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO SparkContext: Starting job: showString at NativeMethodAccessorImpl.java:0
+[2023-07-12T01:16:27.393+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Got job 1 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2023-07-12T01:16:27.394+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Final stage: ResultStage 1 (showString at NativeMethodAccessorImpl.java:0)
+[2023-07-12T01:16:27.395+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Parents of final stage: List()
+[2023-07-12T01:16:27.396+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Missing parents: List()
+[2023-07-12T01:16:27.400+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[12] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2023-07-12T01:16:27.411+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 45.5 KiB, free 434.4 MiB)
+[2023-07-12T01:16:27.418+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 16.6 KiB, free 434.3 MiB)
+[2023-07-12T01:16:27.420+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on e2cfd1b0f54a:45565 (size: 16.6 KiB, free: 434.4 MiB)
+[2023-07-12T01:16:27.421+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1535
+[2023-07-12T01:16:27.422+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[12] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2023-07-12T01:16:27.423+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2023-07-12T01:16:27.425+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (e2cfd1b0f54a, executor driver, partition 0, PROCESS_LOCAL, 9265 bytes)
+[2023-07-12T01:16:27.426+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+[2023-07-12T01:16:27.493+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO PythonRunner: Times: total = 4, boot = -908, init = 912, finish = 0
+[2023-07-12T01:16:27.517+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 3805 bytes result sent to driver
+[2023-07-12T01:16:27.520+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 95 ms on e2cfd1b0f54a (executor driver) (1/1)
+[2023-07-12T01:16:27.522+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2023-07-12T01:16:27.523+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: ResultStage 1 (showString at NativeMethodAccessorImpl.java:0) finished in 0.121 s
+[2023-07-12T01:16:27.524+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2023-07-12T01:16:27.524+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+[2023-07-12T01:16:27.525+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Job 1 finished: showString at NativeMethodAccessorImpl.java:0, took 0.131582 s
+[2023-07-12T01:16:27.582+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO CodeGenerator: Code generated in 38.191917 ms
+[2023-07-12T01:16:27.612+0000] {spark_submit.py:490} INFO - +--------------------+--------------+--------------------+--------------------+------+--------------------+--------------------+--------------------+--------------------+----+--------------+--------------------+--------------------+
+[2023-07-12T01:16:27.614+0000] {spark_submit.py:490} INFO - |     _corrupt_record|          cell|                 dob|               email|gender|                  id|            location|               login|                name| nat|         phone|             picture|          registered|
+[2023-07-12T01:16:27.615+0000] {spark_submit.py:490} INFO - +--------------------+--------------+--------------------+--------------------+------+--------------------+--------------------+--------------------+--------------------+----+--------------+--------------------+--------------------+
+[2023-07-12T01:16:27.617+0000] {spark_submit.py:490} INFO - |                null|  0176-6409181|{61, 1961-12-11T0...|mirja.ebert@examp...|female|{SVNR, 53 101261 ...|{Bad Salzdetfurth...|{fda32e47150e3e39...|  {Mirja, Ebert, Ms}|  DE|  0663-5494494|{https://randomus...|{14, 2008-10-18T0...|
+[2023-07-12T01:16:27.619+0000] {spark_submit.py:490} INFO - |{'gender': 'femal...|(066) W41-0662|{56, 1967-04-18T0...|venera.nalivayko@...|female|                null|{Beregove, {-4.02...|{2878e2d20c009f69...|{Venera, Nalivayk...|null|(096) M52-4495|                null|{14, 2008-09-26T2...|
+[2023-07-12T01:16:27.620+0000] {spark_submit.py:490} INFO - +--------------------+--------------+--------------------+--------------------+------+--------------------+--------------------+--------------------+--------------------+----+--------------+--------------------+--------------------+
+[2023-07-12T01:16:27.622+0000] {spark_submit.py:490} INFO - 
+[2023-07-12T01:16:27.622+0000] {spark_submit.py:490} INFO - >>> [T] Transformando datos...
+[2023-07-12T01:16:27.801+0000] {spark_submit.py:490} INFO - root
+[2023-07-12T01:16:27.802+0000] {spark_submit.py:490} INFO - |-- name: string (nullable = true)
+[2023-07-12T01:16:27.813+0000] {spark_submit.py:490} INFO - |-- gender: string (nullable = false)
+[2023-07-12T01:16:27.815+0000] {spark_submit.py:490} INFO - |-- age: long (nullable = true)
+[2023-07-12T01:16:27.822+0000] {spark_submit.py:490} INFO - |-- email: string (nullable = true)
+[2023-07-12T01:16:27.828+0000] {spark_submit.py:490} INFO - |-- nationality: string (nullable = true)
+[2023-07-12T01:16:27.830+0000] {spark_submit.py:490} INFO - |-- is_under_20: boolean (nullable = true)
+[2023-07-12T01:16:27.833+0000] {spark_submit.py:490} INFO - |-- is_over_40: boolean (nullable = true)
+[2023-07-12T01:16:27.834+0000] {spark_submit.py:490} INFO - 
+[2023-07-12T01:16:27.919+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO CodeGenerator: Code generated in 23.413208 ms
+[2023-07-12T01:16:27.933+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO BlockManagerInfo: Removed broadcast_1_piece0 on e2cfd1b0f54a:45565 in memory (size: 16.6 KiB, free: 434.4 MiB)
+[2023-07-12T01:16:27.934+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO SparkContext: Starting job: showString at NativeMethodAccessorImpl.java:0
+[2023-07-12T01:16:27.935+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Got job 2 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2023-07-12T01:16:27.936+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Final stage: ResultStage 2 (showString at NativeMethodAccessorImpl.java:0)
+[2023-07-12T01:16:27.936+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Parents of final stage: List()
+[2023-07-12T01:16:27.937+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Missing parents: List()
+[2023-07-12T01:16:27.938+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[14] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2023-07-12T01:16:27.941+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 30.1 KiB, free 434.4 MiB)
+[2023-07-12T01:16:27.947+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 12.6 KiB, free 434.4 MiB)
+[2023-07-12T01:16:27.948+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on e2cfd1b0f54a:45565 (size: 12.6 KiB, free: 434.4 MiB)
+[2023-07-12T01:16:27.949+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1535
+[2023-07-12T01:16:27.950+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[14] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2023-07-12T01:16:27.950+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+[2023-07-12T01:16:27.955+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (e2cfd1b0f54a, executor driver, partition 0, PROCESS_LOCAL, 9265 bytes)
+[2023-07-12T01:16:27.956+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+[2023-07-12T01:16:27.975+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO PythonRunner: Times: total = 7, boot = -477, init = 484, finish = 0
+[2023-07-12T01:16:27.978+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 2105 bytes result sent to driver
+[2023-07-12T01:16:27.997+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 45 ms on e2cfd1b0f54a (executor driver) (1/1)
+[2023-07-12T01:16:27.998+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2023-07-12T01:16:27.999+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: ResultStage 2 (showString at NativeMethodAccessorImpl.java:0) finished in 0.060 s
+[2023-07-12T01:16:28.000+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+[2023-07-12T01:16:28.001+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+[2023-07-12T01:16:28.001+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:27 INFO DAGScheduler: Job 2 finished: showString at NativeMethodAccessorImpl.java:0, took 0.065446 s
+[2023-07-12T01:16:28.020+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:28 INFO CodeGenerator: Code generated in 16.439375 ms
+[2023-07-12T01:16:28.025+0000] {spark_submit.py:490} INFO - +----------------+------+---+--------------------+-----------+-----------+----------+
+[2023-07-12T01:16:28.026+0000] {spark_submit.py:490} INFO - |            name|gender|age|               email|nationality|is_under_20|is_over_40|
+[2023-07-12T01:16:28.027+0000] {spark_submit.py:490} INFO - +----------------+------+---+--------------------+-----------+-----------+----------+
+[2023-07-12T01:16:28.028+0000] {spark_submit.py:490} INFO - |     Mirja Ebert|     F| 61|mirja.ebert@examp...|         DE|      false|      true|
+[2023-07-12T01:16:28.029+0000] {spark_submit.py:490} INFO - |Venera Nalivayko|     F| 56|venera.nalivayko@...|       null|      false|      true|
+[2023-07-12T01:16:28.030+0000] {spark_submit.py:490} INFO - +----------------+------+---+--------------------+-----------+-----------+----------+
+[2023-07-12T01:16:28.031+0000] {spark_submit.py:490} INFO - 
+[2023-07-12T01:16:28.032+0000] {spark_submit.py:490} INFO - >>> [L] Cargando datos en Redshift...
+[2023-07-12T01:16:30.475+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO BlockManagerInfo: Removed broadcast_2_piece0 on e2cfd1b0f54a:45565 in memory (size: 12.6 KiB, free: 434.4 MiB)
+[2023-07-12T01:16:30.482+0000] {spark_submit.py:490} INFO - Traceback (most recent call last):
+[2023-07-12T01:16:30.483+0000] {spark_submit.py:490} INFO - File "/opt/***/scripts/ETL_Users.py", line 94, in <module>
+[2023-07-12T01:16:30.484+0000] {spark_submit.py:490} INFO - etl.run()
+[2023-07-12T01:16:30.485+0000] {spark_submit.py:490} INFO - File "/opt/***/scripts/ETL_Users.py", line 18, in run
+[2023-07-12T01:16:30.486+0000] {spark_submit.py:490} INFO - self.execute(process_date)
+[2023-07-12T01:16:30.488+0000] {spark_submit.py:490} INFO - File "/opt/***/scripts/commons.py", line 74, in execute
+[2023-07-12T01:16:30.490+0000] {spark_submit.py:490} INFO - self.load(df_transformed)
+[2023-07-12T01:16:30.492+0000] {spark_submit.py:490} INFO - File "/opt/***/scripts/ETL_Users.py", line 85, in load
+[2023-07-12T01:16:30.492+0000] {spark_submit.py:490} INFO - .mode("append") \
+[2023-07-12T01:16:30.493+0000] {spark_submit.py:490} INFO - File "/home/***/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1396, in save
+[2023-07-12T01:16:30.494+0000] {spark_submit.py:490} INFO - File "/home/***/.local/lib/python3.7/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1323, in __call__
+[2023-07-12T01:16:30.495+0000] {spark_submit.py:490} INFO - File "/home/***/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 169, in deco
+[2023-07-12T01:16:30.496+0000] {spark_submit.py:490} INFO - File "/home/***/.local/lib/python3.7/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+[2023-07-12T01:16:30.500+0000] {spark_submit.py:490} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o82.save.
+[2023-07-12T01:16:30.501+0000] {spark_submit.py:490} INFO - : org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
+[2023-07-12T01:16:30.502+0000] {spark_submit.py:490} INFO - at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+[2023-07-12T01:16:30.503+0000] {spark_submit.py:490} INFO - at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+[2023-07-12T01:16:30.504+0000] {spark_submit.py:490} INFO - at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+[2023-07-12T01:16:30.505+0000] {spark_submit.py:490} INFO - at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+[2023-07-12T01:16:30.506+0000] {spark_submit.py:490} INFO - at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:253)
+[2023-07-12T01:16:30.507+0000] {spark_submit.py:490} INFO - at org.postgresql.Driver.makeConnection(Driver.java:434)
+[2023-07-12T01:16:30.508+0000] {spark_submit.py:490} INFO - at org.postgresql.Driver.connect(Driver.java:291)
+[2023-07-12T01:16:30.508+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.datasources.jdbc.connection.BasicConnectionProvider.getConnection(BasicConnectionProvider.scala:49)
+[2023-07-12T01:16:30.509+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.datasources.jdbc.connection.ConnectionProviderBase.create(ConnectionProvider.scala:102)
+[2023-07-12T01:16:30.510+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1(JdbcDialects.scala:123)
+[2023-07-12T01:16:30.511+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1$adapted(JdbcDialects.scala:119)
+[2023-07-12T01:16:30.511+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:50)
+[2023-07-12T01:16:30.512+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:47)
+[2023-07-12T01:16:30.513+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+[2023-07-12T01:16:30.514+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+[2023-07-12T01:16:30.515+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+[2023-07-12T01:16:30.515+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+[2023-07-12T01:16:30.516+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+[2023-07-12T01:16:30.516+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+[2023-07-12T01:16:30.517+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+[2023-07-12T01:16:30.517+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+[2023-07-12T01:16:30.517+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+[2023-07-12T01:16:30.518+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+[2023-07-12T01:16:30.518+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+[2023-07-12T01:16:30.519+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:512)
+[2023-07-12T01:16:30.519+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:104)
+[2023-07-12T01:16:30.519+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:512)
+[2023-07-12T01:16:30.520+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:31)
+[2023-07-12T01:16:30.520+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+[2023-07-12T01:16:30.521+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+[2023-07-12T01:16:30.521+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+[2023-07-12T01:16:30.521+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+[2023-07-12T01:16:30.522+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:488)
+[2023-07-12T01:16:30.522+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+[2023-07-12T01:16:30.523+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+[2023-07-12T01:16:30.523+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+[2023-07-12T01:16:30.523+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:133)
+[2023-07-12T01:16:30.524+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:856)
+[2023-07-12T01:16:30.524+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:387)
+[2023-07-12T01:16:30.525+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:360)
+[2023-07-12T01:16:30.525+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+[2023-07-12T01:16:30.526+0000] {spark_submit.py:490} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2023-07-12T01:16:30.526+0000] {spark_submit.py:490} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2023-07-12T01:16:30.526+0000] {spark_submit.py:490} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2023-07-12T01:16:30.527+0000] {spark_submit.py:490} INFO - at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[2023-07-12T01:16:30.527+0000] {spark_submit.py:490} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2023-07-12T01:16:30.528+0000] {spark_submit.py:490} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2023-07-12T01:16:30.528+0000] {spark_submit.py:490} INFO - at py4j.Gateway.invoke(Gateway.java:282)
+[2023-07-12T01:16:30.528+0000] {spark_submit.py:490} INFO - at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2023-07-12T01:16:30.529+0000] {spark_submit.py:490} INFO - at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2023-07-12T01:16:30.529+0000] {spark_submit.py:490} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2023-07-12T01:16:30.529+0000] {spark_submit.py:490} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2023-07-12T01:16:30.530+0000] {spark_submit.py:490} INFO - at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-12T01:16:30.530+0000] {spark_submit.py:490} INFO - Suppressed: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
+[2023-07-12T01:16:30.531+0000] {spark_submit.py:490} INFO - at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+[2023-07-12T01:16:30.531+0000] {spark_submit.py:490} INFO - at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+[2023-07-12T01:16:30.532+0000] {spark_submit.py:490} INFO - at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:267)
+[2023-07-12T01:16:30.532+0000] {spark_submit.py:490} INFO - ... 50 more
+[2023-07-12T01:16:30.532+0000] {spark_submit.py:490} INFO - 
+[2023-07-12T01:16:30.577+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO SparkContext: Invoking stop() from shutdown hook
+[2023-07-12T01:16:30.578+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2023-07-12T01:16:30.598+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO SparkUI: Stopped Spark web UI at http://e2cfd1b0f54a:4040
+[2023-07-12T01:16:30.627+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2023-07-12T01:16:30.665+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO MemoryStore: MemoryStore cleared
+[2023-07-12T01:16:30.667+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO BlockManager: BlockManager stopped
+[2023-07-12T01:16:30.669+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2023-07-12T01:16:30.673+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2023-07-12T01:16:30.689+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO SparkContext: Successfully stopped SparkContext
+[2023-07-12T01:16:30.690+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO ShutdownHookManager: Shutdown hook called
+[2023-07-12T01:16:30.691+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO ShutdownHookManager: Deleting directory /tmp/spark-494b98a8-7346-448a-bf27-71ae685da098
+[2023-07-12T01:16:30.695+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO ShutdownHookManager: Deleting directory /tmp/spark-8bbe4600-5d3d-4abc-a9dc-53962b3810ef
+[2023-07-12T01:16:30.702+0000] {spark_submit.py:490} INFO - 23/07/12 01:16:30 INFO ShutdownHookManager: Deleting directory /tmp/spark-494b98a8-7346-448a-bf27-71ae685da098/pyspark-81738f7d-a12e-44b7-a281-36de83d8658b
+[2023-07-12T01:16:30.837+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 422, in submit
+    f"Cannot execute: {self._mask_cmd(spark_submit_cmd)}. Error code is: {returncode}."
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark:7077 --driver-class-path /tmp/drivers/postgresql-42.5.2.jar --name arrow-spark /opt/***/scripts/ETL_Users.py. Error code is: 1.
+[2023-07-12T01:16:30.847+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=etl_users, task_id=spark_etl_users, execution_date=20230712T011602, start_date=20230712T011615, end_date=20230712T011630
+[2023-07-12T01:16:30.876+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 47 for task spark_etl_users (Cannot execute: spark-submit --master spark://spark:7077 --driver-class-path /tmp/drivers/postgresql-42.5.2.jar --name arrow-spark /opt/***/scripts/ETL_Users.py. Error code is: 1.; 223)
+[2023-07-12T01:16:30.917+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-12T01:16:30.965+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
