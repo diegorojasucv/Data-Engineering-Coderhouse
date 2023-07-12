@@ -1,4 +1,5 @@
+.DS_Store
 .env
-entregable_2/docker_shared_folder/.env
+entregable_2/docker_shared_folder/working_dir/.env
 entregable_3/.env
 Data-Engineering-Coderhouse/
